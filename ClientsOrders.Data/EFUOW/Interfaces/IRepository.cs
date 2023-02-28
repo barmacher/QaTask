@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClientsOrders.BL.Interfaces
+namespace ClientsOrders.Data.EFUOW.Interfaces
 {
     public interface IRepository<T> where T : class
     {

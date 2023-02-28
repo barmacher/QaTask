@@ -10,8 +10,8 @@ namespace ClientsOrders.Data.EFUOW.EF
 {
     public class ClientsOrdersContext : DbContext
     {
-            public DbSet<Client> clients { get; set; }
-            public DbSet<Order> orders { get; set; }
+        public DbSet<Client> clients { get; set; }
+        public DbSet<Order> orders { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -34,6 +34,14 @@ namespace ClientsOrders.Data.EFUOW.EF
         }
 
         //protected override void OnModel
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Client>()
+                .HasMany(c => c.Orders)
+                .WithOne(o => o.Client)
+                .HasForeignKey(o => o.ClientID)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
     }
     }
 

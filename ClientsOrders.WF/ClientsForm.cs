@@ -1,4 +1,5 @@
 ﻿using ClientsOrders.Data.EFUOW.Entities;
+using ClientsOrders.Data.EFUOW.Interfaces;
 using ClientsOrders.Data.EFUOW.Repositories;
 using System;
 using System.Collections.Generic;
@@ -50,16 +51,33 @@ namespace ClientsOrders.WF
             DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
             string id = selectedRow.Cells["ID"].Value.ToString();
             selectedClientId = int.Parse(id);
-            if (selectedClientId < 1)
+            if (selectedClientId < 1 )
             {
                 MessageBox.Show("Выберите нужного клиента");
             }
             else
             {
-                unitOfWork.Clients.Delete(selectedClientId);
-                unitOfWork.Save();
-                UpdateDataGridView();
+                Client client = unitOfWork.Clients.GetClientById(selectedClientId);
+                if (client.OrderAmount > 0)
+                {
+                    var confirmResult = MessageBox.Show("Вы уверены что хотите удалить клиента, у которого есть заказы?",
+                        "Подтвердите удаление!", MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        unitOfWork.Clients.Delete(selectedClientId);
+                        unitOfWork.Save();
+                        UpdateDataGridView();
+                    }
+                }
+                else 
+                {
+                    unitOfWork.Clients.Delete(selectedClientId);
+                    unitOfWork.Save();
+                    UpdateDataGridView();
+                }
+                
             }
+
         }
 
         private void ClientsForm_Load(object sender, EventArgs e)

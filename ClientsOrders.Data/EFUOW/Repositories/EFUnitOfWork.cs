@@ -1,5 +1,4 @@
-﻿using ClientsOrders.BL.Interfaces;
-using ClientsOrders.Data.EFUOW.EF;
+﻿using ClientsOrders.Data.EFUOW.EF;
 using ClientsOrders.Data.EFUOW.Entities;
 using ClientsOrders.Data.EFUOW.Interfaces;
 using System;
@@ -14,14 +13,14 @@ namespace ClientsOrders.Data.EFUOW.Repositories
     {
         private bool disposed = false;
         private ClientsOrdersContext db;
-        private IRepository<Client> _clientsRepository;
+        private IClientRepository _clientsRepository;
         private IRepository<Order> _ordersRepository;
 
         public EFUnitOfWork()
         {
             db = new ClientsOrdersContext();
         }
-        public IRepository<Client> Clients
+        public IClientRepository Clients
         {
             get
             {

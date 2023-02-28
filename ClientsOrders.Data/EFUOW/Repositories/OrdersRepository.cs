@@ -1,6 +1,6 @@
-﻿using ClientsOrders.BL.Interfaces;
-using ClientsOrders.Data.EFUOW.EF;
+﻿using ClientsOrders.Data.EFUOW.EF;
 using ClientsOrders.Data.EFUOW.Entities;
+using ClientsOrders.Data.EFUOW.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

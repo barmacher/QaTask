@@ -4,8 +4,7 @@ using ClientsOrders.Data.Models.Common;
 
 namespace ClientsOrders.BL.Controller
 {
-    public class TempDBilController<T> : IRepository<T>
-     where T : BaseEntity
+    public class TempDBilController<T> : IRepository<T> where T : BaseEntity
     {
         public void Add(T item)
         {
@@ -34,4 +33,3 @@ namespace ClientsOrders.BL.Controller
     }
 }
 
-}

@@ -1,6 +1,6 @@
-﻿using ClientsOrders.BL.Interfaces;
-using ClientsOrders.Data.EFUOW.EF;
+﻿using ClientsOrders.Data.EFUOW.EF;
 using ClientsOrders.Data.EFUOW.Entities;
+using ClientsOrders.Data.EFUOW.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ClientsOrders.Data.EFUOW.Repositories
 {
-    public class ClientsRepository : IRepository<Client>
+    public class ClientsRepository : IClientRepository
     {
         private ClientsOrdersContext db;
 
@@ -43,5 +43,13 @@ namespace ClientsOrders.Data.EFUOW.Repositories
         {
             db.Entry(item).State = EntityState.Modified;
         }
+
+        public Client GetClientById(int id)
+        {
+            Client client = db.clients.FirstOrDefault(client => client.ID == id);
+            return client;
+        }
+
+      
     }
 }

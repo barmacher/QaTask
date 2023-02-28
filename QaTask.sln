@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientsOrders.Data", "ClientsOrders.Data\ClientsOrders.Data.csproj", "{0E599422-9D09-489C-80EB-7831C693B698}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientsOrders.Data", "ClientsOrders.Data\ClientsOrders.Data.csproj", "{0E599422-9D09-489C-80EB-7831C693B698}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientsOrders.BL", "ClientsOrders.CMD\ClientsOrders.BL.csproj", "{E7DA85CD-4191-42EC-8624-B1B08B517423}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientsOrders.WF", "ClientsOrders.WF\ClientsOrders.WF.csproj", "{31805528-9C06-427C-92F0-8D3FCE1EAE30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientsOrders.WF", "ClientsOrders.WF\ClientsOrders.WF.csproj", "{31805528-9C06-427C-92F0-8D3FCE1EAE30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{0E599422-9D09-489C-80EB-7831C693B698}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E599422-9D09-489C-80EB-7831C693B698}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E599422-9D09-489C-80EB-7831C693B698}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E7DA85CD-4191-42EC-8624-B1B08B517423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E7DA85CD-4191-42EC-8624-B1B08B517423}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E7DA85CD-4191-42EC-8624-B1B08B517423}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E7DA85CD-4191-42EC-8624-B1B08B517423}.Release|Any CPU.Build.0 = Release|Any CPU
 		{31805528-9C06-427C-92F0-8D3FCE1EAE30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{31805528-9C06-427C-92F0-8D3FCE1EAE30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31805528-9C06-427C-92F0-8D3FCE1EAE30}.Release|Any CPU.ActiveCfg = Release|Any CPU
