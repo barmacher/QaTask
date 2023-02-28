@@ -90,7 +90,6 @@ namespace ClientsOrders.WF
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dataGridView1.Rows[e.RowIndex].Selected = true;
-
             }
             
         }
@@ -98,6 +97,23 @@ namespace ClientsOrders.WF
         {
             IEnumerable<Client> clients = unitOfWork.Clients.GetAll();
             dataGridView1.DataSource = clients.ToList();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+            string id = selectedRow.Cells["ID"].Value.ToString();
+            selectedClientId = int.Parse(id);
+            if (selectedClientId < 1)
+            {
+                MessageBox.Show("Выберите нужного клиента");
+            }
+            else {
+                ShowClientOrders newForm = new ShowClientOrders(selectedClientId, unitOfWork);
+                newForm.Show();
+            }
+          
+
         }
     }
 }

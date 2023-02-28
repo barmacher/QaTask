@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ClientsOrders.Data.EFUOW.Repositories
 {
-    public class OrdersRepository : IRepository<Order>
+    public class OrdersRepository : IOrderRepository
     {
         private ClientsOrdersContext db;
 
@@ -33,9 +33,15 @@ namespace ClientsOrders.Data.EFUOW.Repositories
             return db.orders;
         }
 
+        public List<Order> GetUserOrders(int clientId)
+        {
+            return db.orders.Where(o => o.ClientID == clientId).ToList<Order>();
+        }
+
         public void Update(Order item)
         {
             db.Entry(item).State = EntityState.Modified;
         }
+
     }
 }

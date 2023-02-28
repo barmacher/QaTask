@@ -1,5 +1,4 @@
 ﻿using ClientsOrders.Data.EFUOW.Entities;
-using ClientsOrders.Data.EFUOW.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace ClientsOrders.Data.EFUOW.Interfaces
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IOrderRepository: IRepository<Order>
     {
-        IClientRepository Clients { get;}
-        IOrderRepository Orders { get; }
-
-        void Save();
+        public List<Order> GetUserOrders(int clientId);
     }
 }

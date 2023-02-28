@@ -14,7 +14,7 @@ namespace ClientsOrders.Data.EFUOW.Repositories
         private bool disposed = false;
         private ClientsOrdersContext db;
         private IClientRepository _clientsRepository;
-        private IRepository<Order> _ordersRepository;
+        private IOrderRepository _ordersRepository;
 
         public EFUnitOfWork()
         {
@@ -31,7 +31,7 @@ namespace ClientsOrders.Data.EFUOW.Repositories
                 return _clientsRepository;
             }
         }
-        public IRepository<Order> Orders
+        public IOrderRepository Orders
         {
             get
             {
