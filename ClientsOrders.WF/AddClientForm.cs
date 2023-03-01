@@ -65,5 +65,10 @@ namespace ClientsOrders.WF
             unitOfWork.Save();
             updateDatagridview();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
